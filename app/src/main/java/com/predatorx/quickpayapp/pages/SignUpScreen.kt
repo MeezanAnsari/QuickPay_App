@@ -23,10 +23,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.predatorx.quickpayapp.AuthViewModel
 import com.predatorx.quickpayapp.R
 
 @Composable
-fun SignUpPageLayout(){
+fun SignUpPage(modifier: Modifier = Modifier, navController: NavController, authViewModel: AuthViewModel){
 
     var userName by remember { mutableStateOf("")}
     var number by remember { mutableStateOf("") }
@@ -68,5 +70,5 @@ fun SignUpPageLayout(){
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun SignUpScreenPreview(){
-    SignUpPageLayout()
+
 }

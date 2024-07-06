@@ -29,10 +29,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.predatorx.quickpayapp.AuthViewModel
 import com.predatorx.quickpayapp.R
 
 @Composable
-fun LoginPageLayout(){
+fun LoginPage(modifier: Modifier = Modifier, navController: NavController, authViewModel: AuthViewModel){
 
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -88,5 +90,5 @@ fun LoginPageLayout(){
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun LoginScreenPreview(){
-    LoginPageLayout()
+
 }

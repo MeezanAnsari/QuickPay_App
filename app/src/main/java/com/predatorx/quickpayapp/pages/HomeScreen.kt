@@ -22,10 +22,12 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import com.predatorx.quickpayapp.AuthViewModel
 import com.predatorx.quickpayapp.R
 
 @Composable
-fun HomeScreenLayout(){
+fun HomePage(modifier: Modifier = Modifier, navController: NavController, authViewModel: AuthViewModel){
     Column (
         modifier = Modifier
             .fillMaxSize()
@@ -81,5 +83,5 @@ fun MyIcon(painter: Painter){
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun HomeScreenPreview(){
-    HomeScreenLayout()
+
 }
