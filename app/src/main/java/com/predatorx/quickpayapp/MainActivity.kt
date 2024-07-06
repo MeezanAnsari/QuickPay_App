@@ -13,10 +13,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.predatorx.quickpayapp.pages.LoginPageLayout
-import com.predatorx.quickpayapp.pages.SignUpPageLayout
 import com.predatorx.quickpayapp.ui.theme.QuickPayAppTheme
 import com.predatorx.quickpayapp.MyAppNavigation
+import com.predatorx.quickpayapp.pages.LoginPage
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -26,7 +25,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             QuickPayAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) {
-
+                    ScreenTest()
                 }
             }
         }
@@ -35,13 +34,13 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun ScreenTest(){
-    
+    LoginPage()
 }
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     QuickPayAppTheme {
-
+        ScreenTest()
     }
 }

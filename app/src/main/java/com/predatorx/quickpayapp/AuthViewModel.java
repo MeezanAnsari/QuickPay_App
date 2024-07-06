@@ -1,5 +1,9 @@
 package com.predatorx.quickpayapp;
 
-public class AuthViewModel{
+import androidx.lifecycle.ViewModel.*;
+import com.google.firebase.Firebase;
+import com.google.firebase.auth.FirebaseAuth;
 
+
+public class AuthViewModel{
 }

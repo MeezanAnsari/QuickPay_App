@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1051806340695",
+    "project_id": "quickpay-app-7dbda",
+    "storage_bucket": "quickpay-app-7dbda.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051806340695:android:bc4dc235bd3dc60fa57512",
+        "android_client_info": {
+          "package_name": "com.predatorx.quickpayapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKJ9QlhCL_HyBZLyzLBF9RgOY7UR0nojM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
