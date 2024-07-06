@@ -33,6 +33,11 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@Composable
+fun ScreenTest(){
+    
+}
+
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {

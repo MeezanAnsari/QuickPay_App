@@ -7,9 +7,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material3.Button
-import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -35,18 +35,43 @@ fun LoginPageLayout(){
 
     Column (modifier = Modifier
         .fillMaxSize()
-        .background(colorResource(R.color.baby_blue)),
+        .background(colorResource(R.color.baby_blue))
+        .statusBarsPadding(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(painterResource(R.drawable.quickpay_logo), null)
         Spacer(Modifier.padding(top = 20.dp, bottom = 20.dp))
-        TextField(email, onValueChange = {email = it}, label = { Text("Enter Email")})
+        TextField(
+            value = email,
+            onValueChange = {email = it},
+            label = { Text("Enter Email")},
+        )
         Spacer(Modifier.padding(top = 10.dp, bottom = 10.dp))
         TextField(password, onValueChange = {password = it}, label = { Text("Enter Password")})
         Spacer(Modifier.padding(top = 20.dp, bottom = 20.dp))
-        Button(onClick = { /*TODO*/ }){
-            Text("LOGIN", fontSize = 24.sp, modifier = Modifier.padding(10.dp))
+        Button(onClick = { /*TODO*/ },
+            colors = ButtonColors(
+                containerColor = colorResource(R.color.black),
+                contentColor = colorResource(R.color.white),
+                disabledContainerColor = Color.Gray,
+                disabledContentColor = Color.DarkGray
+            )
+        ){
+            Text("LOGIN", fontSize = 20.sp, modifier = Modifier.padding(6.dp))
+        }
+
+        Spacer(modifier = Modifier.padding(top = 10.dp, bottom = 10.dp))
+
+        Button(onClick = { /*TODO*/ },
+            colors = ButtonColors(
+                containerColor = Color.Transparent,
+                contentColor = colorResource(R.color.black),
+                disabledContainerColor = Color.Transparent,
+                disabledContentColor = Color.DarkGray
+            )
+        ) {
+            Text("Don't have an Account?  SignUp Now!", fontSize = 18.sp)
         }
     }
 }
