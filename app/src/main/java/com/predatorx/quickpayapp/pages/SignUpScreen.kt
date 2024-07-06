@@ -28,7 +28,7 @@ import com.predatorx.quickpayapp.AuthViewModel
 import com.predatorx.quickpayapp.R
 
 @Composable
-fun SignUpPage(modifier: Modifier = Modifier, navController: NavController, authViewModel: AuthViewModel){
+fun SignUpPage(modifier: Modifier = Modifier){
 
     var userName by remember { mutableStateOf("")}
     var number by remember { mutableStateOf("") }
@@ -70,5 +70,5 @@ fun SignUpPage(modifier: Modifier = Modifier, navController: NavController, auth
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun SignUpScreenPreview(){
-
+    SignUpPage()
 }

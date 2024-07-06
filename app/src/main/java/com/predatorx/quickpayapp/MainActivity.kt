@@ -23,13 +23,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
-        val authViewModel: AuthViewModel by viewModels<> {  }
-
         setContent {
             QuickPayAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) {
-                    MyAppNavigation(modifier = Modifier.padding(innerPadding), authViewModel = authViewModel)
 
                 }
             }

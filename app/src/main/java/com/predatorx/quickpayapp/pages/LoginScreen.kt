@@ -34,7 +34,7 @@ import com.predatorx.quickpayapp.AuthViewModel
 import com.predatorx.quickpayapp.R
 
 @Composable
-fun LoginPage(modifier: Modifier = Modifier, navController: NavController, authViewModel: AuthViewModel){
+fun LoginPage(modifier: Modifier = Modifier){
 
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -90,5 +90,5 @@ fun LoginPage(modifier: Modifier = Modifier, navController: NavController, authV
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun LoginScreenPreview(){
-
+    LoginPage()
 }

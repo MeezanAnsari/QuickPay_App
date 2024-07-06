@@ -27,7 +27,7 @@ import com.predatorx.quickpayapp.AuthViewModel
 import com.predatorx.quickpayapp.R
 
 @Composable
-fun HomePage(modifier: Modifier = Modifier, navController: NavController, authViewModel: AuthViewModel){
+fun HomePage(modifier: Modifier = Modifier){
     Column (
         modifier = Modifier
             .fillMaxSize()
@@ -40,7 +40,9 @@ fun HomePage(modifier: Modifier = Modifier, navController: NavController, authVi
 
 @Composable
 fun TopBar(modifier: Modifier = Modifier){
-    Row (modifier = modifier.fillMaxWidth().padding(start = 30.dp, end = 30.dp),
+    Row (modifier = modifier
+        .fillMaxWidth()
+        .padding(start = 30.dp, end = 30.dp),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         MyIcon(painterResource(R.drawable.bell))
@@ -83,5 +85,5 @@ fun MyIcon(painter: Painter){
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun HomeScreenPreview(){
-
+    HomePage()
 }

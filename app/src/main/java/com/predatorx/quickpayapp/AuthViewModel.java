@@ -1,5 +1,5 @@
 package com.predatorx.quickpayapp;
 
-public class AuthViewModel {
+public class AuthViewModel{
 
 }
