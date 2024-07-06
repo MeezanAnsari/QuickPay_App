@@ -8,8 +8,12 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.Email
+import androidx.compose.material.icons.rounded.Lock
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonColors
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -46,9 +50,14 @@ fun LoginPageLayout(){
             value = email,
             onValueChange = {email = it},
             label = { Text("Enter Email")},
+            leadingIcon = {Icon(Icons.Rounded.Email, contentDescription = null)}
         )
         Spacer(Modifier.padding(top = 10.dp, bottom = 10.dp))
-        TextField(password, onValueChange = {password = it}, label = { Text("Enter Password")})
+        TextField(
+            password,
+            onValueChange = {password = it},
+            label = { Text("Enter Password")},
+            leadingIcon = { Icon(Icons.Rounded.Lock, contentDescription = null)})
         Spacer(Modifier.padding(top = 20.dp, bottom = 20.dp))
         Button(onClick = { /*TODO*/ },
             colors = ButtonColors(
