@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             QuickPayAppTheme {
-                com.predatorx.quickpayapp.pages.HomePage()
+                com.predatorx.quickpayapp.pages.ProfilePage()
             }
         }
     }
