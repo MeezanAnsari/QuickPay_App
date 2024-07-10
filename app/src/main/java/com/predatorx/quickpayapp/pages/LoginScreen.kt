@@ -6,8 +6,10 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Email
 import androidx.compose.material.icons.rounded.Lock
@@ -16,6 +18,7 @@ import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -36,6 +39,13 @@ fun LoginPage(modifier: Modifier = Modifier){
 
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
+    var enabledState by remember { mutableStateOf(true) }
+
+    fun validate(value: String){
+        if (value.isEmpty() || value.isBlank()){
+            enabledState = false
+        }
+    }
 
     Column (modifier = Modifier
         .fillMaxSize()
@@ -48,24 +58,40 @@ fun LoginPage(modifier: Modifier = Modifier){
         Spacer(Modifier.padding(top = 20.dp, bottom = 20.dp))
         TextField(
             value = email,
-            onValueChange = {email = it},
+            onValueChange = {
+                email = it
+                validate(email)
+            },
             label = { Text("Enter Email")},
-            leadingIcon = {Icon(Icons.Rounded.Email, contentDescription = null)}
+            leadingIcon = {Icon(Icons.Rounded.Email, contentDescription = null)},
         )
         Spacer(Modifier.padding(top = 10.dp, bottom = 10.dp))
         TextField(
-            password,
-            onValueChange = {password = it},
+            value = password,
+            onValueChange = {
+                password = it
+                validate(password)
+            },
             label = { Text("Enter Password")},
-            leadingIcon = { Icon(Icons.Rounded.Lock, contentDescription = null)})
+            leadingIcon = {
+                Icon(
+                    painterResource(R.drawable.key),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .width(25.dp)
+                        .height(25.dp))
+            }
+        )
         Spacer(Modifier.padding(top = 20.dp, bottom = 20.dp))
-        Button(onClick = { /*TODO*/ },
+        Button(
+            enabled = enabledState,
+            onClick = {},
             colors = ButtonColors(
                 containerColor = colorResource(R.color.black),
                 contentColor = colorResource(R.color.white),
-                disabledContainerColor = Color.Gray,
-                disabledContentColor = Color.DarkGray
-            )
+                disabledContainerColor = Color.LightGray,
+                disabledContentColor = Color.Gray
+            ),
         ){
             Text("LOGIN", fontSize = 20.sp, modifier = Modifier.padding(6.dp))
         }
@@ -74,7 +100,7 @@ fun LoginPage(modifier: Modifier = Modifier){
 
         Button(onClick = { /*TODO*/ },
             colors = ButtonColors(
-                containerColor = Color.Transparent,
+                containerColor = colorResource(R.color.con_color),
                 contentColor = colorResource(R.color.black),
                 disabledContainerColor = Color.Transparent,
                 disabledContentColor = Color.DarkGray

@@ -18,29 +18,21 @@ import com.predatorx.quickpayapp.MyAppNavigation
 import com.predatorx.quickpayapp.pages.LoginPage
 
 class MainActivity : ComponentActivity() {
-    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             QuickPayAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) {
-                    ScreenTest()
-                }
+                com.predatorx.quickpayapp.pages.HomePage()
             }
         }
     }
 }
 
-@Composable
-fun ScreenTest(){
-    LoginPage()
-}
-
-@Preview(showBackground = true)
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun GreetingPreview() {
     QuickPayAppTheme {
-        ScreenTest()
+        com.predatorx.quickpayapp.pages.HomePage()
     }
 }
